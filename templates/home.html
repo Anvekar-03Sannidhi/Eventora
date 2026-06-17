@@ -1,172 +1,350 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Eventora — Find a Moment. Be There.</title>
-    <link rel="stylesheet" href="/static/css/home.css">
-    <meta name="description" content="Eventora — Find events, reserve seats, and be there.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Eventora</title>
+
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
-    <header class="site-header">
-        <div class="site-nav container">
-            <a class="logo" href="#">Eventora</a>
-            <nav class="nav-links" aria-label="Main navigation">
-                <a href="#home">Home</a>
-                <a href="#categories">Categories</a>
-                <a href="#featured">Featured</a>
-                <a href="#about">About</a>
-            </nav>
-            <div class="nav-actions">
-                <a class="btn btn-ghost" href="#login">Login</a>
-                <a class="btn btn-primary" href="#register">Get Started</a>
-                <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle menu">☰</button>
+
+    <header class="navbar">
+
+        <div class="logo-section">
+
+            <div class="logo">
+                Eventora
             </div>
+
+            <div class="location">
+
+                <div class="location-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="location-text">
+                    <span class="city">Bhopal</span>
+                    <span class="state">Madhya Pradesh</span>
+                </div>
+
+                <div class="dropdown-arrow">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+            </div>
+
         </div>
+
+        <nav class="nav-links">
+
+            <a href="#" class="active-nav">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">Featured</a>
+            <a href="#">About</a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <button class="icon-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="icon-btn">
+                <i class="fa-regular fa-user"></i>
+            </button>
+
+        </div>
+
     </header>
 
-    <main id="home">
-        <section class="hero">
-            <div class="container hero-inner">
-                <div class="hero-left">
-                    <div class="eyebrow">Eventora</div>
-                    <h1 class="hero-title">Find a Moment. Be There.</h1>
-                    <p class="hero-lead">Discover events across schools, colleges, hackathons, sports and cultural festivals. Browse, select seats, and book in seconds.</p>
-                    <div class="hero-ctas">
-                        <a class="btn btn-cta" href="#featured">Explore Events</a>
-                        <a class="btn btn-outline" href="#organizer">Become an Organizer</a>
-                    </div>
-                    <ul class="trust-list">
-                        <li><strong>Instant booking</strong></li>
-                        <li><strong>Secure payments</strong></li>
-                        <li><strong>Digital tickets</strong></li>
-                    </ul>
-                </div>
-                <div class="hero-right">
-                    <div class="carousel" id="carousel" aria-roledescription="carousel">
-                        <div class="slides">
-                            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80')" data-index="0"></div>
-                            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1528238646473-2a3b6d3b7b1c?auto=format&fit=crop&w=1200&q=80')" data-index="1"></div>
-                            <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1545235617-9465a1d8c8f1?auto=format&fit=crop&w=1200&q=80')" data-index="2"></div>
-                        </div>
-                        <div class="carousel-controls">
-                            <button class="carousel-prev" aria-label="Previous">‹</button>
-                            <button class="carousel-next" aria-label="Next">›</button>
-                        </div>
-                        <div class="carousel-dots" aria-hidden="true"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="hero-section">
 
-        <section id="categories" class="section categories">
-            <div class="container">
-                <h2 class="section-title">Popular Categories</h2>
-                <div class="category-grid">
-                    <div class="category-card">School Events</div>
-                    <div class="category-card">College Events</div>
-                    <div class="category-card">Hackathons</div>
-                    <div class="category-card">Sports</div>
-                    <div class="category-card">Workshops</div>
-                    <div class="category-card">Cultural Events</div>
-                </div>
-            </div>
-        </section>
+        <div class="hero-card">
 
-        <section id="featured" class="section featured">
-            <div class="container">
-                <div class="section-head">
-                    <h2 class="section-title">Featured Events</h2>
-                    <a class="link-muted" href="#featured">View all</a>
-                </div>
-                <div class="events-grid">
-                    <article class="event-card">
-                        <div class="event-image" style="background-image:url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="event-body">
-                            <h3 class="event-title">Campus Hackathon 2026</h3>
-                            <p class="event-meta">May 10 • City Convention Center</p>
-                            <div class="event-actions">
-                                <a class="btn btn-sm" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="event-card">
-                        <div class="event-image" style="background-image:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="event-body">
-                            <h3 class="event-title">Cultural Fiesta</h3>
-                            <p class="event-meta">Jun 14 • Riverside Park</p>
-                            <div class="event-actions">
-                                <a class="btn btn-sm" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="event-card">
-                        <div class="event-image" style="background-image:url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=800&q=80')"></div>
-                        <div class="event-body">
-                            <h3 class="event-title">Pro Sports League</h3>
-                            <p class="event-meta">Jul 01 • National Stadium</p>
-                            <div class="event-actions">
-                                <a class="btn btn-sm" href="#">View Details</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+            
+            <h1>
+                Find a Moment. Be There.
+            </h1>
 
-        <section class="section stats">
-            <div class="container stats-wrap">
-                <div class="stat">
-                    <div class="stat-num" data-target="1200">0</div>
-                    <div class="stat-label">Events Hosted</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" data-target="45000">0</div>
-                    <div class="stat-label">Tickets Booked</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-num" data-target="950">0</div>
-                    <div class="stat-label">Active Organizers</div>
-                </div>
-            </div>
-        </section>
+            <p>
+                Discover events across schools, colleges,
+                hackathons, sports and cultural festivals.
+                Browse, select seats, and book in seconds.
+            </p>
 
-        <section class="section cta">
-            <div class="container cta-card">
-                <div>
-                    <h2>Ready to join your next event?</h2>
-                    <p class="muted">Register now and never miss an experience.</p>
-                </div>
-                <div>
-                    <a id="register" class="btn btn-cta" href="#">Register</a>
-                </div>
-            </div>
-        </section>
-    </main>
+            <div class="hero-buttons">
 
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-col">
-                <h4>About</h4>
-                <p class="muted">Eventora is a modern event discovery and ticket booking platform.</p>
+                <a href="#" class="primary-btn">
+                    Explore Events
+                </a>
+
+                <a href="#" class="secondary-btn">
+                    Become Organizer
+                </a>
+
             </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p class="muted">hello@eventora.example</p>
+
+            <div class="hero-features">
+
+                <span>⚡ Instant Booking</span>
+                <span>🔒 Secure Payments</span>
+                <span>🎫 Digital Tickets</span>
+
             </div>
-            <div class="footer-col">
-                <h4>Social</h4>
-                <div class="socials">
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
+
         </div>
+
+    </section>
+
+        <section class="categories-section">
+
+            <h2 class="category-heading">
+                Browse By Category
+            </h2>
+
+            <div class="categories-container">
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/school.svg' %}" alt="School">
+                    </div>
+                    <p>School Events</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/college.svg' %}" alt="College">
+                    </div>
+                    <p>College Events</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/hackathon.svg' %}" alt="Hackathon">
+                    </div>
+                    <p>Hackathons</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/sports.svg' %}" alt="Sports">
+                    </div>
+                    <p>Sports</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/cultural.svg' %}" alt="Cultural">
+                    </div>
+                    <p>Cultural Festivals</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/workshop.svg' %}" alt="Workshop">
+                    </div>
+                    <p>Workshops</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/music.svg' %}" alt="Music">
+                    </div>
+                    <p>Music & Concerts</p>
+                </div>
+
+                <div class="category-item">
+                    <div class="category-circle">
+                        <img src="{% static 'images/seminar.svg' %}" alt="Seminar">
+                    </div>
+                    <p>Seminars</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="why-section">
+
+        <h2 class="why-heading">
+            Why Choose Eventora
+        </h2>
+
+        <div class="why-container">
+
+            <div class="why-card">
+                <div class="why-icon">⚡</div>
+                <h3>Instant Booking</h3>
+                <p>
+                    Reserve your seats in just a few clicks without any hassle.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">🔒</div>
+                <h3>Secure Payments</h3>
+                <p>
+                    Safe and trusted payment methods for every booking.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">🎫</div>
+                <h3>Digital Tickets</h3>
+                <p>
+                    Receive tickets instantly and access events paperlessly.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">🏆</div>
+                <h3>Verified Events</h3>
+                <p>
+                    Discover authentic events from trusted organizers.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">📜</div>
+                <h3>Digital Certificates</h3>
+                <p>
+                    Receive participation certificates digitally after event completion.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">📋</div>
+                <h3>Attendance Tracking</h3>
+                <p>
+                    Organizers can track attendance automatically and efficiently.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta-section">
+
+        <div class="cta-container">
+
+            <h2>
+                Ready to Discover Your Next Event?
+            </h2>
+
+            <p>
+                From school competitions and college fests to hackathons,
+                sports tournaments and workshops — Eventora helps you
+                discover, book and manage events effortlessly.
+            </p>
+
+            <div class="cta-buttons">
+
+                <a href="#" class="cta-primary-btn">
+                    Explore Events
+                </a>
+
+                <a href="#" class="cta-secondary-btn">
+                    Become Organizer
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <h2>Eventora</h2>
+
+                <p>
+                    Making event discovery, registration and management
+                    simple for schools, colleges, communities and organizers.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Use Eventora</h3>
+
+                <a href="#">Home</a>
+                <a href="#">Browse Events</a>
+                <a href="#">Categories</a>
+                <a href="#">Featured Events</a>
+                <a href="#">Become Organizer</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Plan Events</h3>
+
+                <a href="#">Create Event</a>
+                <a href="#">Manage Registrations</a>
+                <a href="#">Attendance Tracking</a>
+                <a href="#">Digital Certificates</a>
+                <a href="#">Event Analytics</a>
+                <a href="#">Organizer Dashboard</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Find Events</h3>
+
+                <a href="#">School Events</a>
+                <a href="#">College Events</a>
+                <a href="#">Hackathons</a>
+                <a href="#">Sports Events</a>
+                <a href="#">Cultural Festivals</a>
+                <a href="#">Workshops</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Connect With Us</h3>
+
+                <a href="#">About Us</a>
+                <a href="#">Contact Support</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">Email Us</a>
+
+            </div>
+
+        </div>
+
         <div class="footer-bottom">
-            <div class="container">© <span id="year"></span> Eventora — All rights reserved.</div>
+
+            <p>
+                © 2026 Eventora. All Rights Reserved.
+            </p>
+
+            <p>
+                Developed by- Sannidhi Rajendrakumar Anvekar
+            </p>
+
         </div>
+
     </footer>
 
-    <script src="/static/js/home.js"></script>
 </body>
+
 </html>
