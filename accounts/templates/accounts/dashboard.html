@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard | Eventora</title>
+</head>
+
+<body>
+
+    <h1>Welcome to Eventora 🚀</h1>
+
+    <h2>Hello, {{ request.user.username }} 👋</h2>
+
+    <p>
+        Role:
+        {{ request.user.profile.role }}
+    </p>
+
+    <hr>
+
+    <h3>Quick Actions</h3>
+
+    <button>
+        Browse Events
+    </button>
+
+    <button>
+        My Tickets
+    </button>
+
+    <button>
+        My Certificates
+    </button>
+
+    <button>
+        <a href="/accounts/logout/">
+            Logout
+        </a>
+    </button>
+
+</body>
+
+</html>
