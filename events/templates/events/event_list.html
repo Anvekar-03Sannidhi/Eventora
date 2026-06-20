@@ -1,0 +1,19 @@
+<h1>All Events</h1>
+
+{% for event in events %}
+
+<h3>
+    <a href="{% url 'event_detail' event.id %}">
+        {{ event.title }}
+    </a>
+</h3>
+
+<p>{{ event.venue }}</p>
+
+<p>{{ event.event_date }}</p>
+
+<p>₹{{ event.ticket_price }}</p>
+
+<hr>
+
+{% endfor %}

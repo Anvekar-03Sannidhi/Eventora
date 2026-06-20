@@ -1,0 +1,21 @@
+<h1>{{ event.title }}</h1>
+
+<p>{{ event.description }}</p>
+
+<p>Category: {{ event.category }}</p>
+
+<p>Type: {{ event.event_type }}</p>
+
+<p>Venue: {{ event.venue }}</p>
+
+<p>Date: {{ event.event_date }}</p>
+
+<p>Time: {{ event.event_time }}</p>
+
+<p>Price: ₹{{ event.ticket_price }}</p>
+
+<p>Seats: {{ event.total_seats }}</p>
+
+<a href="{% url 'book_event' event.id %}" class="book-btn">
+    Book Ticket
+</a>

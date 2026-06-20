@@ -1,0 +1,39 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/my_bookings.css' %}">
+
+<h1>My Bookings</h1>
+
+{% if messages %}
+    {% for message in messages %}
+
+        <div class="message-box">
+            {{ message }}
+        </div>
+
+    {% endfor %}
+{% endif %}
+
+{% for booking in bookings %}
+
+    <hr>
+
+    <h3>{{ booking.event.title }}</h3>
+
+    <p>
+        Amount: ₹{{ booking.total_amount }}
+    </p>
+
+    <p>
+        Status: {{ booking.status }}
+    </p>
+
+    <p>
+        Booked On: {{ booking.booking_time }}
+    </p>
+
+{% empty %}
+
+    <p>No bookings found.</p>
+
+{% endfor %}

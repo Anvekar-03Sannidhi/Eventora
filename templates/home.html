@@ -46,21 +46,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <nav class="nav-links">
 
             <a href="#" class="active-nav">Home</a>
-            <a href="#">Categories</a>
-            <a href="#">Featured</a>
-            <a href="#">About</a>
+            <a href="#categories-section">Categories</a>
+            <a href="#why-section">Featured</a>
+            <a href="#footer">About</a>
 
         </nav>
 
         <div class="nav-icons">
 
-            <button class="icon-btn">
+            <a href="{% url 'event_list' %}">
                 <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            </a>
 
-            <button class="icon-btn">
+            <a href="{% url 'login' %}" class="icon-btn">
                 <i class="fa-regular fa-user"></i>
-            </button>
+            </a>
 
         </div>
 
@@ -83,7 +83,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <div class="hero-buttons">
 
-                <a href="#" class="primary-btn">
+                <a href="{% url 'event_list' %}" class="primary-btn">
                     Explore Events
                 </a>
 
@@ -105,7 +105,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     </section>
 
-        <section class="categories-section">
+        <section id="categories-section" class="categories-section">
 
             <h2 class="category-heading">
                 Browse By Category
@@ -173,7 +173,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         </section>
 
-        <section class="why-section">
+        <section id="why-section" class="why-section">
 
         <h2 class="why-heading">
             Why Choose Eventora
@@ -249,7 +249,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <div class="cta-buttons">
 
-                <a href="#" class="cta-primary-btn">
+                <a href="{% url 'event_list' %}" class="cta-primary-btn">
                     Explore Events
                 </a>
 
@@ -263,7 +263,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     </section>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
 
         <div class="footer-top">
 

@@ -1,7 +1,12 @@
 from django.urls import path
 
-from .views import home
+from events import views
+from .views import home, create_event
 
 urlpatterns = [
     path('', home, name='home'),
+    path("create/", create_event, name="create_event"),
+    path("all/",views.event_list,name="event_list"),
+    path(
+    "<int:event_id>/", views.event_detail, name="event_detail"),
 ]

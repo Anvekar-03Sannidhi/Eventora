@@ -77,3 +77,4 @@ class Seat(models.Model):
 
     def __str__(self):
         return self.seat_number
+
