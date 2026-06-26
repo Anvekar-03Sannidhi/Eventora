@@ -16,55 +16,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-    <header class="navbar">
-
-        <div class="logo-section">
-
-            <div class="logo">
-                Eventora
-            </div>
-
-            <div class="location">
-
-                <div class="location-icon">
-                    <i class="fa-solid fa-location-dot"></i>
-                </div>
-
-                <div class="location-text">
-                    <span class="city">Bhopal</span>
-                    <span class="state">Madhya Pradesh</span>
-                </div>
-
-                <div class="dropdown-arrow">
-                    <i class="fa-solid fa-angle-down"></i>
-                </div>
-
-            </div>
-
-        </div>
-
-        <nav class="nav-links">
-
-            <a href="#" class="active-nav">Home</a>
-            <a href="#categories-section">Categories</a>
-            <a href="#why-section">Featured</a>
-            <a href="#footer">About</a>
-
-        </nav>
-
-        <div class="nav-icons">
-
-            <a href="{% url 'event_list' %}">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-
-            <a href="{% url 'login' %}" class="icon-btn">
-                <i class="fa-regular fa-user"></i>
-            </a>
-
-        </div>
-
-    </header>
+    {% include "components/navbar.html" %}
 
     <section class="hero-section">
 
@@ -263,87 +215,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     </section>
 
-    <footer id="footer" class="footer">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <h2>Eventora</h2>
-
-                <p>
-                    Making event discovery, registration and management
-                    simple for schools, colleges, communities and organizers.
-                </p>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h3>Use Eventora</h3>
-
-                <a href="#">Home</a>
-                <a href="#">Browse Events</a>
-                <a href="#">Categories</a>
-                <a href="#">Featured Events</a>
-                <a href="#">Become Organizer</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h3>Plan Events</h3>
-
-                <a href="#">Create Event</a>
-                <a href="#">Manage Registrations</a>
-                <a href="#">Attendance Tracking</a>
-                <a href="#">Digital Certificates</a>
-                <a href="#">Event Analytics</a>
-                <a href="#">Organizer Dashboard</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h3>Find Events</h3>
-
-                <a href="#">School Events</a>
-                <a href="#">College Events</a>
-                <a href="#">Hackathons</a>
-                <a href="#">Sports Events</a>
-                <a href="#">Cultural Festivals</a>
-                <a href="#">Workshops</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h3>Connect With Us</h3>
-
-                <a href="#">About Us</a>
-                <a href="#">Contact Support</a>
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="#">Email Us</a>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Eventora. All Rights Reserved.
-            </p>
-
-            <p>
-                Developed by- Sannidhi Rajendrakumar Anvekar
-            </p>
-
-        </div>
-
-    </footer>
+    {% include "components/footer.html" %}
 
 </body>
 

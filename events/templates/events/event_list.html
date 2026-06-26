@@ -1,19 +1,103 @@
-<h1>All Events</h1>
+{% load static %}
 
-{% for event in events %}
+<!DOCTYPE html>
+<html>
 
-<h3>
-    <a href="{% url 'event_detail' event.id %}">
-        {{ event.title }}
-    </a>
-</h3>
+<head>
 
-<p>{{ event.venue }}</p>
+    <title>All Events</title>
 
-<p>{{ event.event_date }}</p>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event_list.css' %}">
 
-<p>₹{{ event.ticket_price }}</p>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<hr>
+</head>
 
-{% endfor %}
+<body>
+
+    {% include "components/navbar.html" %}
+
+    <section class="events-section">
+
+        <h1 class="page-title">
+            Discover Events
+        </h1>
+
+        <p class="page-subtitle">
+            Explore hackathons, workshops, cultural fests, sports events and more.
+        </p>
+
+        <div class="events-container">
+
+            {% for event in events %}
+
+            <div class="event-card">
+
+                <div class="event-image">
+
+                    {% if event.event_image %}
+
+                    <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
+
+                    {% else %}
+
+                    <img src="{% static 'images/default-event.jpg' %}" alt="Event">
+
+                    {% endif %}
+
+                    <span class="category-badge">
+                        {{ event.category }}
+                    </span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <h2>{{ event.title }}</h2>
+
+                    <p class="venue">
+                        📍 {{ event.venue }}
+                    </p>
+
+                    <p class="datetime">
+                        📅 {{ event.event_date }}
+                        &nbsp;
+                        ⏰ {{ event.event_time }}
+                    </p>
+
+                    <div class="bottom-row">
+
+                        <span class="price">
+                            ₹{{ event.ticket_price }}
+                        </span>
+
+                        <a href="{% url 'event_detail' event.id %}"
+                        class="details-btn">
+
+                            View Details →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <h2>No Events Found</h2>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+    {% include "components/footer.html" %}
+
+</body>
+
+</html>

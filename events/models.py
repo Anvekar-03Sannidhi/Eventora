@@ -52,6 +52,11 @@ class Event(models.Model):
         decimal_places=2
     )
 
+    event_image = models.ImageField(
+        upload_to="event_images/",
+        default="event_images/default.jpg"
+    )
+
     total_seats = models.PositiveIntegerField()
 
     created_at = models.DateTimeField(

@@ -1,0 +1,49 @@
+<header class="navbar">
+
+        <div class="logo-section">
+
+            <div class="logo">
+                Eventora
+            </div>
+
+            <div class="location">
+
+                <div class="location-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="location-text">
+                    <span class="city">Bhopal</span>
+                    <span class="state">Madhya Pradesh</span>
+                </div>
+
+                <div class="dropdown-arrow">
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="#" class="active-nav">Home</a>
+            <a href="#categories-section">Categories</a>
+            <a href="#why-section">Featured</a>
+            <a href="#footer">About</a>
+
+        </nav>
+
+        <div class="nav-icons">
+
+            <a href="{% url 'event_list' %}">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <a href="{% url 'login' %}" class="icon-btn">
+                <i class="fa-regular fa-user"></i>
+            </a>
+
+        </div>
+
+    </header>
