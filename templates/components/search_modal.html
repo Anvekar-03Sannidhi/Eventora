@@ -1,0 +1,74 @@
+{% load static %}
+
+<div id="search-modal" class="search-modal">
+
+    <div class="search-box">
+
+        <button class="close-search">
+            ✕
+        </button>
+
+        <input
+            type="text"
+            placeholder="Search for events, workshops, sports..."
+        >
+
+        <div class="search-categories">
+
+            <button class="active-chip">All</button>
+
+            <button>Hackathons</button>
+
+            <button>Workshops</button>
+
+            <button>Sports</button>
+
+            <button>Cultural</button>
+
+            <button>Seminars</button>
+
+            <button>More</button>
+
+        </div>
+
+        <h3>Trending Events</h3>
+
+        <div class="trending-events">
+
+            <div class="search-item">
+                <img src="{% static 'images/hackathon.jpg' %}">
+                <div>
+                    <h4>Event Name</h4>
+                    <p>Hackathon</p>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <img src="{% static 'images/hackathon.jpg' %}">
+                <div>
+                    <h4>Event Name</h4>
+                    <p>Workshop</p>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <img src="{% static 'images/hackathon.jpg' %}">
+                <div>
+                    <h4>Event Name</h4>
+                    <p>Sports</p>
+                </div>
+            </div>
+
+            <div class="search-item">
+                <img src="{% static 'images/hackathon.jpg' %}">
+                <div>
+                    <h4>Event Name</h4>
+                    <p>Cultural</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

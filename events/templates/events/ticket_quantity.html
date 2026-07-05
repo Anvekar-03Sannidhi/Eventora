@@ -1,0 +1,47 @@
+{% load static %}
+
+<div id="ticket-modal" class="ticket-modal">
+
+    <div class="ticket-box">
+
+        <button class="close-ticket">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Select Tickets</h2>
+
+        <div class="ticket-icon">
+            <i class="fa-solid fa-ticket"></i>
+        </div>
+
+        <div class="ticket-count">
+
+            <button class="count-btn active" data-count="1">1</button>
+            <button class="count-btn" data-count="2">2</button>
+            <button class="count-btn" data-count="3">3</button>
+            <button class="count-btn" data-count="4">4</button>
+            <button class="count-btn" data-count="5">5</button>
+            <button class="count-btn" data-count="6">6</button>
+
+        </div>
+
+        <div class="ticket-info">
+
+            <div>
+                <h4>General</h4>
+                <p>₹{{ event.ticket_price }}</p>
+            </div>
+
+            <span class="available">
+                Available
+            </span>
+
+        </div>
+
+        <button id="continue-btn" class="continue-btn">
+            Continue →
+        </button>
+
+    </div>
+
+</div>

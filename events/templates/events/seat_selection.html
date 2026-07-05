@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Select Seats</title>
+
+    <link rel="stylesheet" href="{% static 'css/seat_selection.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+{% include "components/navbar.html" %}
+
+<section class="seat-container">
+
+    <div class="seat-header">
+
+        <h1>{{ event.title }}</h1>
+
+        <p>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            {{ event.venue }}
+
+            &nbsp; | &nbsp;
+
+            {{ event.event_date }}
+
+            &nbsp; | &nbsp;
+
+            {{ event.event_time }}
+
+        </p>
+
+    </div>
+
+    <div class="seat-layout">
+
+        <h3>VIP</h3>
+
+        <div id="vip-seats"></div>
+
+        <h3>General</h3>
+
+        <div id="general-seats"></div>
+
+    </div>
+
+    <div class="screen">
+
+        SCREEN
+
+    </div>
+
+    <div class="seat-legend">
+
+        <div>
+
+            <span class="available-seat"></span>
+
+            Available
+
+        </div>
+
+        <div>
+
+            <span class="selected-seat"></span>
+
+            Selected
+
+        </div>
+
+        <div>
+
+            <span class="booked-seat"></span>
+
+            Booked
+
+        </div>
+
+    </div>
+
+    <div class="booking-summary">
+
+        <p>
+
+            Selected Seats :
+            <span id="selected-count">0</span>
+
+        </p>
+
+        <button class="continue-seat">
+
+            Continue →
+
+        </button>
+
+    </div>
+
+</section>
+
+{% include "components/footer.html" %}
+
+<script src="{% static 'js/seat_selection.js' %}"></script>
+<script src="{% static 'js/search_modal.js' %}"></script>
+
+</body>
+
+</html>

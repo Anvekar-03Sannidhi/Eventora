@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#f7f7f7;
+    font-family:Arial,sans-serif;
+
+}
+
+/* ============================
+        Main Container
+============================ */
+
+.seat-container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:50px auto;
+}
+
+/* ============================
+        Header
+============================ */
+
+.seat-header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+}
+
+.seat-header h1{
+
+    font-size:42px;
+
+    color:#222;
+
+    margin-bottom:10px;
+}
+
+.seat-header p{
+
+    color:#666;
+
+    font-size:18px;
+}
+
+/* ============================
+        Layout
+============================ */
+
+.seat-layout{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.seat-layout h3{
+
+    text-align:center;
+
+    color:#ff6b00;
+
+    margin:25px 0;
+
+    font-size:24px;
+}
+
+/* ============================
+        Seat Rows
+============================ */
+
+.seat-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.row-label{
+
+    width:30px;
+
+    font-weight:bold;
+
+    color:#666;
+}
+
+/* ============================
+        Seat
+============================ */
+
+.seat{
+
+    width:38px;
+    height:38px;
+
+    border:2px solid #ff6b00;
+
+    border-radius:8px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.seat:hover{
+
+    transform:scale(1.08);
+
+}
+
+.seat.selected{
+
+    background:#ff6b00;
+
+    color:white;
+}
+
+.seat.booked{
+
+    background:#d9d9d9;
+
+    border-color:#d9d9d9;
+
+    color:#888;
+
+    cursor:not-allowed;
+}
+
+/* ============================
+        Screen
+============================ */
+
+.screen{
+
+    width:70%;
+
+    margin:45px auto;
+
+    text-align:center;
+
+    padding:14px;
+
+    border-radius:40px;
+
+    background:linear-gradient(to right,#ffd3b0,#ff6b00,#ffd3b0);
+
+    color:white;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+/* ============================
+        Legend
+============================ */
+
+.seat-legend{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-bottom:35px;
+}
+
+.seat-legend div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.available-seat,
+.selected-seat,
+.booked-seat{
+
+    width:22px;
+    height:22px;
+
+    border-radius:5px;
+}
+
+.available-seat{
+
+    border:2px solid #ff6b00;
+}
+
+.selected-seat{
+
+    background:#ff6b00;
+}
+
+.booked-seat{
+
+    background:#d9d9d9;
+}
+
+/* ============================
+        Summary
+============================ */
+
+.booking-summary{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:25px;
+}
+
+.booking-summary p{
+
+    font-size:22px;
+
+    font-weight:600;
+}
+
+.continue-seat{
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    background:#ff6b00;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+}
+
+.continue-seat:hover{
+
+    background:#e55f00;
+}
+
+.seat-row{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin:14px 0;
+
+}
+
+.row-label{
+
+    width:30px;
+    font-weight:700;
+    font-size:18px;
+
+}
+
+.seat{
+
+    width:34px;
+    height:34px;
+
+    border:2px solid #ff6b00;
+
+    border-radius:8px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.seat:hover{
+
+    background:#ff6b00;
+    color:white;
+
+}
+
+.seat.selected{
+
+    background:#ff6b00;
+    color:white;
+
+}

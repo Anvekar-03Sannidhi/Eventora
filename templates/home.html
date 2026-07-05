@@ -10,13 +10,19 @@
     <title>Eventora</title>
 
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/search_modal.css' %}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
     {% include "components/navbar.html" %}
+
+    {% include "components/search_modal.html" %}
 
     <section class="hero-section">
 
@@ -216,6 +222,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     </section>
 
     {% include "components/footer.html" %}
+
+    <script src="{% static 'js/search_modal.js' %}"></script>
 
 </body>
 

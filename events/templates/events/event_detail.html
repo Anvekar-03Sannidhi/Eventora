@@ -1,21 +1,110 @@
-<h1>{{ event.title }}</h1>
+{% load static %}
 
-<p>{{ event.description }}</p>
+<!DOCTYPE html>
+<html>
 
-<p>Category: {{ event.category }}</p>
+<head>
 
-<p>Type: {{ event.event_type }}</p>
+    <title>{{ event.title }}</title>
 
-<p>Venue: {{ event.venue }}</p>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/event_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ticket_quantity.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<p>Date: {{ event.event_date }}</p>
+</head>
 
-<p>Time: {{ event.event_time }}</p>
+<body>
 
-<p>Price: ₹{{ event.ticket_price }}</p>
+{% include "components/navbar.html" %}
 
-<p>Seats: {{ event.total_seats }}</p>
+<section class="event-hero">
 
-<a href="{% url 'book_event' event.id %}" class="book-btn">
-    Book Ticket
-</a>
+    <div class="hero-container">
+
+        <div class="event-banner">
+
+            <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
+
+        </div>
+
+        <div class="event-details">
+
+            <h1>{{ event.title }}</h1>
+
+            <div class="detail-row">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>{{ event.venue }}</span>
+            </div>
+
+            <div class="detail-row">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>{{ event.event_date }}</span>
+            </div>
+
+            <div class="detail-row">
+                <i class="fa-solid fa-clock"></i>
+                <span>{{ event.event_time }}</span>
+            </div>
+
+            <div class="detail-row">
+                <i class="fa-solid fa-users"></i>
+                <span>{{ event.available_seats }} Seats Left</span>
+            </div>
+
+            <div class="detail-row">
+                <i class="fa-solid fa-star"></i>
+                <span>4.8 (250+ Reviews)</span>
+            </div>
+
+            <div class="event-tags">
+                <span class="tag">Hackathon</span>
+                <span class="tag">Certificates</span>
+                <span class="tag">Networking</span>
+            </div>
+
+        </div>
+
+        <div class="booking-card">
+
+            <h2>₹{{ event.ticket_price }}</h2>
+
+            <p>Seats Left : {{ event.available_seats }}</p>
+
+            <a href="#" class="book-btn">
+                Book Ticket
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="about-event">
+
+    <div class="about-container">
+
+        <h2>About This Event</h2>
+
+        <p>
+
+            {{ event.description }}
+
+        </p>
+
+    </div>
+
+</section>
+
+{% include "components/footer.html" %}
+
+{% include "events/ticket_quantity.html" %}
+
+<script src="{% static 'js/ticket_quantity.js' %}"></script>
+<script src="{% static 'js/search_modal.js' %}"></script>
+
+</body>
+
+</html>
