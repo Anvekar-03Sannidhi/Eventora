@@ -1,3 +1,5 @@
+console.log("Seat selection script loaded.");
+
 const vipContainer = document.getElementById("vip-seats");
 const generalContainer = document.getElementById("general-seats");
 
@@ -42,10 +44,43 @@ createSeats(generalContainer, 6, 12);
 const allSeats = document.querySelectorAll(".seat");
 
 const selectedSeatText = document.getElementById("selected-count");
+const selectedSeatList = document.getElementById("selected-seat-list");
 
 let selectedSeats = [];
 
-const maxSeats = 2;
+const params = new URLSearchParams(window.location.search);
+const maxSeats = Number(params.get("tickets")) || 1;
+
+console.log("Max Seats =", maxSeats);
+
+function updateSelectedSeatList(){
+
+    if(selectedSeats.length === 0){
+
+        selectedSeatList.textContent = "No seats selected";
+
+        return;
+
+    }
+
+    selectedSeatList.innerHTML = "";
+
+    selectedSeats.forEach(seat => {
+
+        const seatName = document.createElement("div");
+
+        const section = seat.closest("#vip-seats")
+            ? "VIP"
+            : "General";
+
+        seatName.textContent =
+            `${section} - ${seat.dataset.row}${seat.dataset.seat}`;
+
+        selectedSeatList.appendChild(seatName);
+
+    });
+
+}
 
 allSeats.forEach(seat => {
 
@@ -79,6 +114,36 @@ allSeats.forEach(seat => {
 
         selectedSeatText.textContent = selectedSeats.length;
 
+        updateSelectedSeatList();
+
     });
+
+});
+
+const continueButton = document.querySelector(".continue-seat");
+
+continueButton.addEventListener("click", () => {
+
+    if(selectedSeats.length !== maxSeats){
+
+        alert(`Please select exactly ${maxSeats} seat(s).`);
+
+        return;
+
+    }
+
+    const seats = selectedSeats.map(seat =>
+        `${seat.dataset.row}${seat.dataset.seat}`
+    );
+
+    const query = new URLSearchParams({
+
+        tickets: maxSeats,
+
+        seats: seats.join(",")
+
+    });
+
+    window.location.href = `../summary/?${query.toString()}`;
 
 });

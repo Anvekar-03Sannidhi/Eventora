@@ -95,3 +95,24 @@ def seat_selection(request, event_id):
             "event": event
         }
     )
+
+def booking_summary(request, event_id):
+
+    event = get_object_or_404(
+        Event,
+        id=event_id
+    )
+
+    return render(
+
+        request,
+
+        "events/booking_summary.html",
+
+        {
+
+            "event": event
+
+        }
+
+    )

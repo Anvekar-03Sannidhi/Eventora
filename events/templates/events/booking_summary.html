@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Summary</title>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/booking_summary.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+{% include "components/navbar.html" %}
+
+<section class="summary-container">
+
+    <div class="summary-card">
+
+        <div class="summary-image">
+
+            <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
+
+        </div>
+
+        <div class="summary-details">
+
+            <h1>{{ event.title }}</h1>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                {{ event.venue }}
+            </p>
+
+            <p>
+                <i class="fa-solid fa-calendar"></i>
+                {{ event.event_date }}
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                {{ event.event_time }}
+            </p>
+
+            <hr>
+
+            <h3>Selected Seats</h3>
+
+            <div id="booking-seat-list">
+
+            </div>
+
+            <hr>
+
+            <div class="price-summary">
+
+                <div class="price-row">
+
+                    <span>Ticket Price</span>
+
+                    <span>
+                        ₹<span id="ticket-total"></span>
+                    </span>
+
+                </div>
+
+                <div class="price-row">
+
+                    <span>Convenience Fee</span>
+
+                    <span>
+                        ₹<span id="fee-price">18</span>
+                    </span>
+
+                </div>
+
+                <div class="price-row">
+
+                    <span>GST</span>
+
+                    <span>
+                        ₹<span id="gst-price">5</span>
+                    </span>
+
+                </div>
+
+                <hr>
+
+                <div class="price-row total-row">
+
+                    <span>Grand Total</span>
+
+                    <span>
+                        ₹<span id="total-price"></span>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="coupon-box">
+
+                <input
+                    type="text"
+                    placeholder="Enter Coupon Code"
+                >
+
+                <button>
+
+                    Apply
+
+                </button>
+
+            </div>
+
+            <button class="pay-btn">
+
+                Continue to Payment →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% include "components/footer.html" %}
+
+<script src="{% static 'js/booking_summary.js' %}"></script>
+
+</body>
+
+</html>

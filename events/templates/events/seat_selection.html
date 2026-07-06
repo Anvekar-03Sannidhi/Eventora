@@ -94,12 +94,24 @@
 
     <div class="booking-summary">
 
-        <p>
+        <div class="selection-summary">
 
-            Selected Seats :
-            <span id="selected-count">0</span>
+            <h3>Selected Seats</h3>
 
-        </p>
+            <div id="selected-seat-list">
+
+                No seats selected
+
+            </div>
+
+            <p>
+
+                Total Seats :
+                <span id="selected-count">0</span>
+
+            </p>
+
+        </div>
 
         <button class="continue-seat">
 
@@ -112,6 +124,7 @@
 </section>
 
 {% include "components/footer.html" %}
+{% include "components/search_modal.html" %}
 
 <script src="{% static 'js/seat_selection.js' %}"></script>
 <script src="{% static 'js/search_modal.js' %}"></script>

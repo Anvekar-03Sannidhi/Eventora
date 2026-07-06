@@ -66,6 +66,6 @@ countButtons.forEach(button => {
 // Continue to Seat Selection Page
 continueBtn.addEventListener("click", () => {
 
-    window.location.href = "seats/";
+    window.location.href = `seats/?tickets=${selectedCount}`;
 
 });

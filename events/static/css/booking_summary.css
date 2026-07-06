@@ -1,0 +1,101 @@
+.summary-container{
+    max-width:1200px;
+    margin:50px auto;
+    min-height:65vh;
+}
+
+.summary-card{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+}
+
+.summary-image img{
+    width:420px;
+    border-radius:18px;
+}
+
+.summary-details{
+    flex:1;
+}
+
+.pay-btn{
+    margin-top:25px;
+    padding:14px 30px;
+    border:none;
+    border-radius:10px;
+    background:#ff6b00;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.price-summary{
+
+    margin-top:25px;
+
+}
+
+.price-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin:18px 0;
+
+    font-size:18px;
+
+}
+
+.total-row{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#ff6b00;
+
+}
+
+.coupon-box{
+
+    margin-top:30px;
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.coupon-box input{
+
+    flex:1;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+.coupon-box button{
+
+    padding:14px 25px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ff6b00;
+
+    color:white;
+
+    cursor:pointer;
+
+}
