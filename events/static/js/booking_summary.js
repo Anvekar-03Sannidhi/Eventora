@@ -31,3 +31,12 @@ const grandTotal = ticketTotal + fee + gst;
 document.getElementById("ticket-total").textContent = ticketTotal;
 
 document.getElementById("total-price").textContent = grandTotal;
+
+const continueBtn = document.getElementById("continue-payment");
+
+continueBtn.addEventListener("click", () => {
+
+    window.location.href =
+        `../payment/?${window.location.search.substring(1)}`;
+
+});

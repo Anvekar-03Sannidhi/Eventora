@@ -1,0 +1,242 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+{% include "components/navbar.html" %}
+
+<section class="payment-container">
+
+    <div class="payment-grid">
+
+        <!-- LEFT SIDE -->
+
+        <div class="payment-left">
+
+            <div class="event-card">
+
+                <div class="event-image">
+
+                    <img src="{{ event.event_image.url }}" alt="{{ event.title }}">
+
+                </div>
+
+                <div class="event-info">
+
+                    <h2>{{ event.title }}</h2>
+
+                    <p>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        {{ event.venue }}
+
+                    </p>
+
+                    <p>
+
+                        <i class="fa-solid fa-calendar"></i>
+
+                        {{ event.event_date }}
+
+                    </p>
+
+                    <p>
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        {{ event.event_time }}
+
+                    </p>
+
+                    <hr>
+
+                    <h3>Selected Seats</h3>
+
+                    <div id="payment-seat-list">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="payment-right">
+
+            <div class="payment-summary">
+
+                <h2>Payment Summary</h2>
+
+                <div class="summary-row">
+
+                    <span>Ticket Total</span>
+
+                    <span>
+                        ₹<span id="ticket-total"></span>
+                    </span>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Convenience Fee</span>
+
+                    <span>₹18</span>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>GST</span>
+
+                    <span>₹5</span>
+
+                </div>
+
+                <hr>
+
+                <div class="summary-row total-row">
+
+                    <span>Grand Total</span>
+
+                    <span>
+                        ₹<span id="grand-total"></span>
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="user-card">
+
+                <h2>Your Details</h2>
+
+                <p>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Sannidhi Anvekar
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +91-XXXXXXXXXX
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Madhya Pradesh
+
+                </p>
+
+            </div>
+
+            <div class="payment-methods">
+
+                <h2>Select Payment Method</h2>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        checked
+                    >
+
+                    UPI
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                    >
+
+                    Credit / Debit Card
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                    >
+
+                    Net Banking
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="payment"
+                    >
+
+                    Wallet
+
+                </label>
+
+            </div>
+
+            <div class="terms-card">
+
+                <p>
+
+                    By proceeding, you agree to Eventora's Terms & Conditions.
+
+                </p>
+
+            </div>
+
+            <button class="pay-btn">
+
+                Pay ₹<span id="pay-btn-total"></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% include "components/footer.html" %}
+
+<script src="{% static 'js/payment.js' %}"></script>
+
+</body>
+
+</html>
