@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from events.forms import EventForm
 from events.models import Event
+from django.shortcuts import get_object_or_404, render
 
 # Create your views here.
 def home(request):
@@ -136,4 +137,25 @@ def payment(request, event_id):
 
         }
 
+    )
+
+def payment_success(request, event_id):
+
+    event = get_object_or_404(Event, id=event_id)
+
+    context = {
+
+        "event": event,
+
+        "ticket_count": request.GET.get("tickets"),
+
+        "seats": request.GET.get("seats"),
+
+        "total_price": request.GET.get("amount"),
+
+    }
+
+    return render(
+        request,
+        "events/payment_success.html",context
     )

@@ -44,6 +44,14 @@ payBtnTotal.textContent = finalAmount;
 // Payment Button
 document.querySelector(".pay-btn").addEventListener("click", () => {
 
-    alert("Payment Successful!");
+    const currentUrl = window.location.pathname;
+
+    // currentUrl = /events/1/payment/
+
+    const successUrl =
+        currentUrl.replace("/payment/", "/payment-success/") +
+        `?tickets=${tickets}&seats=${seats.join(",")}&amount=${finalAmount}`;
+
+    window.location.href = successUrl;
 
 });

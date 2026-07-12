@@ -12,4 +12,5 @@ urlpatterns = [
     path("<int:event_id>/seats/", views.seat_selection, name="seat_selection"),
     path("<int:event_id>/summary/", views.booking_summary, name="booking_summary"),
     path("<int:event_id>/payment/", views.payment, name="payment"),
+    path("<int:event_id>/payment-success/", views.payment_success, name="payment_success",)
 ]

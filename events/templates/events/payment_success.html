@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Payment Successful</title>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/payment_success.css' %}">
+
+</head>
+
+<body>
+
+<div class="success-logo">
+    <a href="{% url 'home' %}" class="logo">
+        Eventora
+    </a>
+</div>
+
+<section class="success-container">
+
+    <div class="success-card">
+
+        <div class="tick-circle">
+
+            ✓
+
+        </div>
+
+        <h1>
+            Payment Successful
+        </h1>
+
+        <p class="subtitle">
+            Your booking has been confirmed.
+        </p>
+
+        <div class="booking-details">
+
+            <div class="detail-row">
+
+                <span>Booking ID</span>
+                <strong>#EVT10234</strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Event</span>
+                <strong>{{ event.title }}</strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Seats</span>
+                <strong>{{ seats }}</strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Tickets</span>
+                <strong>{{ ticket_count }}</strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Total Paid</span>
+                <strong>₹{{ total_price }}</strong>
+
+            </div>
+
+        </div>
+
+        <div class="btn-group">
+
+            <a href="#" class="btn-primary">
+
+                View Ticket
+
+            </a>
+
+            <a href="{% url 'home' %}" class="btn-secondary">
+
+                Back Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
