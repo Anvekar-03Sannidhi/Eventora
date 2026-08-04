@@ -12,14 +12,15 @@ class Category(models.Model):
 class EventType(models.Model):
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="event_types"
     )
 
     name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
-    
+
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
@@ -28,17 +29,20 @@ class Event(models.Model):
 
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="events"
     )
 
     event_type = models.ForeignKey(
         EventType,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="events"
     )
 
     organizer = models.ForeignKey(
         User,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="organized_events"
     )
 
     venue = models.CharField(max_length=255)
@@ -65,11 +69,14 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+
 class Seat(models.Model):
+
     event = models.ForeignKey(
         Event,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="seats"
     )
 
     seat_number = models.CharField(
@@ -80,6 +87,9 @@ class Seat(models.Model):
         default=False
     )
 
-    def __str__(self):
-        return self.seat_number
+    class Meta:
+        unique_together = ("event", "seat_number")
+        ordering = ["seat_number"]
 
+    def __str__(self):
+        return f"{self.event.title} - {self.seat_number}"
